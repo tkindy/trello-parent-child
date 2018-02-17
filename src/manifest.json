@@ -1,0 +1,19 @@
+{
+  "name": "Parent/Child",
+  "details": "Create parent/child relationships between cards.",
+  "icon": {
+    "url": "./images/hierarchy.png"
+  },
+  "author": "Tyler Kindy",
+  "capabilities": [
+    "callback",
+    "card-buttons",
+    "card-badges",
+    "card-detail-badges"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "./index.html"
+    }
+  }
+}
