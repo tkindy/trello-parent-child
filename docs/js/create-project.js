@@ -7,13 +7,9 @@ window.createProject.addEventListener('submit', (event) => {
   const projectName = window.projectName.value;
 
   return t.get('board', 'shared', projectsKey)
-    .then(projects => t.set('board', 'shared', projectsKey, projects.concat([projectName])))
-    .then(() => {
-      t.set('card', 'shared', 'project', window.projectName.value);
-    })
-    .then(() => {
-      t.closePopup();
-    });
+    .then(projects => t.set('board', 'shared', projectsKey, (projects || []).concat([projectName])))
+    .then(() => t.set('card', 'shared', 'project', projectName))
+    .then(() => t.closePopup());
 });
 
 t.render(() => {
