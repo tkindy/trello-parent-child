@@ -30,6 +30,13 @@ TrelloPowerUp.initialize({
         text: project
       }] : []);
   },
+  'card-detail-badges': t => {
+    return t.get('card', 'shared', 'project')
+      .then(project => project ? [{
+        title: 'Project',
+        text: project
+      }] : []);
+  },
   'card-buttons': () => {
     return [
       buildButton('Create Project', HIERARCHY_ICON, 'create-project'),
