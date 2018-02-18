@@ -22,6 +22,8 @@ t.render(() => {
         select.add(option);
       }
     })
+    .then(() => t.get('card', 'shared', 'project'))
+    .then(project => select.value = project)
     .then(() => {
       t.sizeTo('#project').done();
     });
