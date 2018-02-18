@@ -23,6 +23,13 @@ const buildButton = (title, icon, page) => {
 const HIERARCHY_ICON = img('hierarchy');
 
 TrelloPowerUp.initialize({
+  'card-badges': t => {
+    return t.get('card', 'shared', 'project')
+      .then(project => project ? [{
+        icon: HIERARCHY_ICON,
+        text: project
+      }] : []);
+  },
   'card-buttons': () => {
     return [
       buildButton('Create Project', HIERARCHY_ICON, 'create-project'),
